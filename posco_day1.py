@@ -1,3 +1,4 @@
 print("첫 vscode 파이썬")
 print("온도 측정값")
 print(75)
+#-----day1-----
