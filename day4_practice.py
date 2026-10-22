@@ -44,11 +44,23 @@
 
 # print("***경고***".strip("*"))
 
-x = ' WARNING '
-print(x.strip().lower())
+# x = ' WARNING '
+# print(x.strip().lower())
 
-y = '   경보   '
-print('[' + y.strip() + ']')
-print('[' + y + ']')
-y = y.strip()
-print('[' + y + ']')
+# y = '   경보   '
+# print('[' + y.strip() + ']')
+# print('[' + y + ']')
+# y = y.strip()
+# print('[' + y + ']')
+
+#====================================
+x = '설비 정상 가동'
+print(x.replace('정상','점검'))
+
+y = 'PUMP A 03'
+print(y.split())
+
+z = 'a,b,c,d'
+print(z.split(','))
+
+print(z.split(',', 1))

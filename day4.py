@@ -61,3 +61,6 @@ print(email[:at]) #Hong
 # startwith / endswith
 # 형식: 문자열.startswitch('x') >> bool
 print('EQP-001'.startswith('EQP'))
+
+# replace
+print(' 정 상 가 동 '.replace(' ', ''))
