@@ -96,16 +96,63 @@
 # minutes = total_min % 60
 # print(hours, "시간", minutes, "분")
 
-# 02_04_실습1
+# # 02_04_실습1
+# birth_year = int(input("태어난 해를 입력하세요: "))
+# age = 2026 - birth_year
+# print("나이:", age, "세")
 
+# # 02_04_실습2
+# nation = input("국가: ")
+# city = input("도시: ")
+# print(nation + "의 " + city + "에 거주하시는군요!")
 
-# 02_04_실습2
+# # 02_04_실습3
+# a = int(input("수1: "))
+# b = int(input("수2: "))
+# print("합:", a + b)
+# print("나눗셈:", a / b)
 
+# # 02_04_실습4
+# temp = int(input("온도: "))
+# print("80 초과?", temp > 80)
+# print("0 이상?", temp >= 0)
 
-# 02_04_실습3
+# # 02_04_실습5
+# a = int(input("수1: "))
+# b = int(input("수2: "))
+# c = int(input("수3: "))
+# avg = (a+b+c)/3
+# print("60 이상?", avg >= 60)
 
+# 03_01_실습1
+# 삼중 따옴표: 엔터 친 그대로 줄바꿈이 됨
+checklist1 = """가동 점검표
+1. 온도 확인
+2. 압력 확인"""
+print(checklist1)
 
-# 02_04_실습4
+print("-" * 15)
 
+# 이스케이프 문자: \n = 줄바꿈, \t = 탭(들여쓰기)
+checklist2 = "가동 점검표\n\t1. 온도 확인\n\t2. 압력 확인"
+print(checklist2)
 
-# 02_04_실습5
+print("-" * 15)
+
+print("가동 점검표 / 1. 온도 확인 / 2. 압력 확인")
+
+# 03_01_실습2
+코드 = 'PUMP_A'
+상태 = '정상'
+날짜 = '2025-01-15'
+print(코드 + '/' + 상태 + '/' + 날짜)
+
+# 03_01_실습3
+code = 'PUMP_A'
+status = 'WARNING'
+run_time = 600
+chk_date = '2026-10-26'
+print("설비: " + code)
+print("상태: " + status)
+print("가동 시간(min): " + str(run_time))
+print("가동일: " + chk_date)
