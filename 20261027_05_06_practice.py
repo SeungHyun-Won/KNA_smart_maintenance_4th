@@ -15,32 +15,54 @@
 
 #############################################################################################
 
-temps = [36, 32, 31, 22, 21, 20, 25, 19]
-sum = 0
-count = 0
-for t in temps:
-    if t > 30:
-        sum += t
-        count += 1
-print("고온 평균: ", sum / count)
-print()
+# temps = [36, 32, 31, 22, 21, 20, 25, 19]
+# sum = 0
+# count = 0
+# for t in temps:
+#     if t > 30:
+#         sum += t
+#         count += 1
+# print("고온 평균: ", sum / count)
+# print()
 
 #############################################################################################
+
+# temps = [35, 32, 31, 33, 22, 21, 20, 25, 19]
+# high_temps = []
+# for t in temps:
+#     if t > 30:
+#         high_temps.append(t)
+# print(temps, '/', high_temps, ', 개수: ', len(high_temps))
+# print()
+
+#############################################################################################
+
+# temps_c = [35, 32, 31, 33, 22, 21, 20, 25, 19]
+# temps_f = []
+# for t in temps_c:
+#     t = t*1.8 + 32
+#     temps_f.append(round(t, 2))
+# print(f"섭씨 온도: {temps_c}")
+# print(f"화씨 온도: {temps_f}")
+# print()
+
+##############################################################################################
 
 temps = [35, 32, 31, 33, 22, 21, 20, 25, 19]
 high_temps = []
+total = 0
+high_total = 0
+count = 0
+high_count = 0
 for t in temps:
     if t > 30:
         high_temps.append(t)
-print(temps, '/', high_temps, ', 개수: ', len(high_temps))
-print()
-
-#############################################################################################
-
-temps_c = [35, 32, 31, 33, 22, 21, 20, 25, 19]
-temps_f = []
-for t in temps_c:
-    t = t*1.8 + 32
-    temps_f.append(round(t, 2))
-print(f"섭씨 온도: {temps_c}")
-print(f"화씨 온도: {temps_f}")
+        total += t
+        high_total += t
+        count += 1
+        high_count += 1
+    else:
+        total += t
+        count += 1
+print(f"전체 평균: {round((total / count), 2)} / 고온 개수: {high_count} / 고온 평균: {high_total / high_count}")        
+        
