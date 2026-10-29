@@ -94,19 +94,19 @@
 
 ##############################################################################################
 
-def get_avg(values):
-    return sum(values) / len(values)
+# def get_avg(values):
+#     return sum(values) / len(values)
 
-def judge(avg, limit = 80):
-    if avg < limit:
-        print("평균: ", avg, " >> ", "정상")
-    else:
-        print("평균: ", avg, " >> ", "비정상")
+# def judge(avg, limit = 80):
+#     if avg < limit:
+#         print("평균: ", avg, " >> ", "정상")
+#     else:
+#         print("평균: ", avg, " >> ", "비정상")
 
-temp = [66, 78, 98, 22, 55, 101, 56, 88]
-avg = get_avg(temp)
-judge(avg)
-judge(avg, limit = 70)
+# temp = [66, 78, 98, 22, 55, 101, 56, 88]
+# avg = get_avg(temp)
+# judge(avg)
+# judge(avg, limit = 70)
 
 ##############################################################################################
 
