@@ -127,12 +127,55 @@
         
 ##############################################################################################    
 
-import csv
-with open("data/08_summary.csv", "w", encoding="utf-8", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerow(["시각", "설비"])            # 헤더
-    writer.writerow(["09:00", "PRESS-01"])
-    writer.writerows([["09:01", "PRESS-02"], ["09:02", "PRESS-03"]])
+# import csv
+# with open("data/08_summary.csv", "w", encoding="utf-8", newline="") as f:
+#     writer = csv.writer(f)
+#     writer.writerow(["시각", "설비"])            # 헤더
+#     writer.writerow(["09:00", "PRESS-01"])
+#     writer.writerows([["09:01", "PRESS-02"], ["09:02", "PRESS-03"]])
 
-with open("data/08_summary.csv", "r", encoding="utf-8") as f:
-    print(f.read())
+# with open("data/08_summary.csv", "r", encoding="utf-8") as f:
+#     print(f.read())
+
+############################################################################################## 
+
+# import csv
+# FILE = "data/08_press_13_261029_3.csv"
+# high = []
+# with open(FILE, "r", encoding="utf-8") as f:
+#     reader = csv.DictReader(f)
+#     for row in reader:
+#         if float(row["전류"]) > 90:
+#             high.append(row)
+
+# with open("data/high_current.csv", "w", encoding="utf-8", newline="") as f: #newline >> 빈줄 없애기
+#     writer = csv.writer(f)
+#     for row in high:
+#         writer.writerow(high)
+# print(len(high), "행 저장")
+    
+##############################################################################################
+
+import csv
+# 새로운 리스트 변수 선언
+list = []
+
+with open("data/08_press_13_261029_3.csv", "r", encoding="utf-8") as f:
+    # 헤더 값 건너뛰기
+    reader = csv.reader(f)
+    header = next(reader)
+    print(header)
+
+    # 전류 값 기준 90 초과 값만 새로운 리스트 담기
+    for row in reader:
+        current = float(row[4])
+        if current > 90:
+            list.append(row)
+
+# 조건에 맞는 데이터를 새 CSV로 저장
+with open("data/08_current_over90.csv", "w", encoding="utf-8", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(header)
+    writer.writerows(list)
+
+print("저장된 행 수:", len(list))
