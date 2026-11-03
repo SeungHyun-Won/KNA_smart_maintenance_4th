@@ -122,6 +122,7 @@ for name in names:
             row_num = len(rows)
             print(name, "의 행 수: ", row_num)
     except FileNotFoundError:
+        print("건너뜀: ", name)
         continue
 print("처리한 파일: ", done)
         

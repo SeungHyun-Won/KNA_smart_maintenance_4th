@@ -1,0 +1,8 @@
+ICT 검사 데이터 리포트
+전체 19행 / 유효 15건 / 제외 4건
+측정값 평균 1897.68 / 최대 4366.23 / 최소 0.0
+제외 내역:
+  17행 / 검사ID 9001 / could not convert string to float: '결측'
+  18행 / 검사ID 9002 / could not convert string to float: ''
+  19행 / 검사ID 9003 / 범위 밖 값 -999.0
+  20행 / 검사ID 9004 / 측정값 열 없음
