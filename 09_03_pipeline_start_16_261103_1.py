@@ -117,17 +117,24 @@ def verify_part_counts(valid_rows):
     """[실습 6] 유효 행을 부품별로 다시 묶고 합계가 전체와 같은지 확인."""
     # TODO: group_by_part(valid_rows)를 재사용하고
     # 각 부품에 calc_stats(part_rows, 2)를 적용해 건수를 합산하세요.
-    by_part, dropped = group_by_part(valid_rows)        # ② 정제된 valid로 다시 분류 (실습 2 재사용)
+    
     check_sum = 0
-    for part, part_rows in by_part.items():             # 부품명, 그 부품의 행 목록
-        stats = calc_stats(part_rows, 2)                # ③ 부품별 통계 (실습 3 재사용)
-        if stats is None:                               # 숫자가 없는 부품 대비
-            continue
-        print(f"    {part}: {stats['count']}건 / 평균 {stats['mean']}")
-        check_sum += stats["count"]                     # ④ count 합산
-    result = check_sum == len(valid_rows)               # ⑤ 합계와 전체 비교 → True / False
-    print(f"[6단계] 부품별 합계 {check_sum} = 유효 {len(valid_rows)} → {result}")
-    return result
+    by_part, _ = group_by_part(valid_rows) ### >>> _ : 부품명 누락 건수를 무시
+    for v in sorted(by_part):
+        check_sum += calc_stats(by_part[v], 2)["count"]
+    print(check_sum == len(valid_rows))
+        
+    # by_part, dropped = group_by_part(valid_rows)        # ② 정제된 valid로 다시 분류 (실습 2 재사용)
+    # check_sum = 0
+    # for part, part_rows in by_part.items():             # 부품명, 그 부품의 행 목록
+    #     stats = calc_stats(part_rows, 2)                # ③ 부품별 통계 (실습 3 재사용)
+    #     if stats is None:                               # 숫자가 없는 부품 대비
+    #         continue
+    #     print(f"    {part}: {stats['count']}건 / 평균 {stats['mean']}")
+    #     check_sum += stats["count"]                     # ④ count 합산
+    # result = check_sum == len(valid_rows)               # ⑤ 합계와 전체 비교 → True / False
+    # print(f"[6단계] 부품별 합계 {check_sum} = 유효 {len(valid_rows)} → {result}")
+    # return result
 
 
 def main():
