@@ -1,4 +1,4 @@
-import numpy as np
+# import numpy as np
 
 # # 실습 3
 # rpm = np.array([4603, 4603, 4603, 1241, 4603, 4603, 3149, 4603, 4987, 4603])
@@ -93,10 +93,17 @@ def col(c):
 # 실습 1
 num, cy_time = col(0), col(1)
 hi = np.argmax(cy_time)
-print(f"{int(num[hi])}번 샷에서 사이클타임 {cy_time[hi]}초(배열 인덱스는 {hi})")
+# print(f"{int(num[hi])}번 샷에서 사이클타임 {cy_time[hi]}초(배열 인덱스는 {hi})")
 
 # 실습 2
 ct_diff = np.diff(cy_time)
 ct_abs = np.abs(ct_diff)
 j = np.argmax(ct_abs)
-print(f"{int(num[j])}번과 {int(num[j + 1])}번 사이에서 {ct_abs[j]}초만큼 변함")
+# print(f"{int(num[j])}번과 {int(num[j + 1])}번 사이에서 {ct_abs[j]}초만큼 변함")
+
+# 실습 3
+cyl = col(2)
+cyl[0] = 9999
+mean_9999 = np.mean(cyl)
+fixed = np.clip(cyl, 100, 300)
+print(f"보정 전 평균은 {round(mean_9999, 1)}, 보정 뒤에는 {round(np.mean(fixed), 1)}")
