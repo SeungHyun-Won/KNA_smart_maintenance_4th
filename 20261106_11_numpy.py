@@ -121,16 +121,16 @@ def col(c):
 # z = (vib_s - np.mean(vib_s)) / np.std(vib_s)
 # print(vib_s[np.abs(z) > 2])
 
-# 실습 2
-temp = col(1)
-temp_q1, temp_q3 = np.percentile(temp, [25, 75])
-iqr = np.abs(temp_q3 - temp_q1)
-upper = temp_q3 + iqr * 1.5
-print(f"상한 {round(upper, 1)}, 이상치: {np.round(temp[temp > upper], 1)} >> {np.sum(temp > upper)}건")
+# # 실습 2
+# temp = col(1)
+# temp_q1, temp_q3 = np.percentile(temp, [25, 75])
+# iqr = np.abs(temp_q3 - temp_q1)
+# upper = temp_q3 + iqr * 1.5
+# print(f"상한 {round(upper, 1)}, 이상치: {np.round(temp[temp > upper], 1)} >> {np.sum(temp > upper)}건")
 
-# 실습 3
-cyc, temp = col(0), col(1)
-z = (temp - np.mean(temp)) / np.std(temp)
-z_ov2 = z[np.abs(z) > 2]
-# print(z, '\n', z_ov2)
-print(f"z값 2넘은 사이클: {cyc[np.abs(z) > 2]}, 최대 z-score: {round(np.max(z_ov2), 2)}")
+# # 실습 3
+# cyc, temp = col(0), col(1)
+# z = (temp - np.mean(temp)) / np.std(temp)
+# z_ov2 = z[np.abs(z) > 2]
+# # print(z, '\n', z_ov2)
+# print(f"z값 2넘은 사이클: {cyc[np.abs(z) > 2]}, 최대 z-score: {round(np.max(z_ov2), 2)}")
