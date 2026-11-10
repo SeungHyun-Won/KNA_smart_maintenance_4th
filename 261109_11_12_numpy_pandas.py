@@ -93,11 +93,11 @@ df = pd.read_csv(F)
 # print(a.shape)
 # print(pd.read_csv(F, nrows=20).shape)
 
-# # 실습 3
-# df_sep = pd.read_csv(F, sep = ";", encoding="utf-8")
-# print(df)
-# print(df_sep)
-# print("열 이름:", df_sep.columns.to_list())
+# 실습 3
+df_sep = pd.read_csv(F, sep = ";", encoding="utf-8")
+print(df)
+print(df_sep)
+print("열 이름:", df_sep.columns.to_list())
 
 # 실습 4
 F_semi = "data/12_metro_compressor_semicolon_22_261109_2.csv"
