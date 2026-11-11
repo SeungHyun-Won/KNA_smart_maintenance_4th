@@ -116,8 +116,20 @@ F_SHOT = 'data/13_diecasting_shot_24_261110_2.csv'
 # print(type(df[["형체력"]]))
 
 
-# sorted = df.sort_values("형체력", )
-# print("정렬 후 인덱스 앞 4개:", sorted.index)
+# 행 선택
+# - 라벨과 위치 번호의 차이
+# - 라벨: 그 행에 붙은 이름표 = 인덱스 값
+# - 위치 번호: 맨 위에서부터 몇 번째인지, 항상 0부터
+
+# sorted = df.sort_values("형체력", ascending=False)
+
+# print("정렬 후 인덱스 앞 4개:", sorted.index[:4].tolist())    # 정렬 후 인덱스 앞 4개: [22, 17, 27, 12]
+# print("정렬 후 iloc[0] 샷:", int(sorted.iloc[0]['샷']))     # 정렬 후 iloc[0] 샷: 23
+# print("정렬 후 loc[0] 샷:", int(sorted.loc[0, '샷']))       # 정렬 후 loc[0] 샷: 1
+
+# # 여러 행 선택
+# print(df.loc[0:4].shape)    # (5, 8)
+# print(df.iloc[0:4].shape)   # (4, 8)
 
 
 # # 행, 열 동시 선택
